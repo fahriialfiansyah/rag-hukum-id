@@ -1,4 +1,3 @@
-```markdown
 # WRITEUP — RAG Hukum Indonesia
 
 ## 1. Arsitektur Solusi
@@ -6,12 +5,12 @@
 **Komponen utama:**
 - **Data Source:** Halaman peraturan di `peraturan.bpk.go.id` (UUD 1945, UU No.6/2023, UU No.30/2002, UU No.3/2025).
 - **Loader:** `WebBaseLoader` (LangChain Community) untuk mengunduh HTML.
-- **Chunking:** `RecursiveCharacterTextSplitter` (chunk_size=1200, overlap=150) agar pasal/ayat tidak terputus ekstrem.
+- **Chunking:** `RecursiveCharacterTextSplitter` (chunk_size=1200, overlap=150) agar pasal/ayat tidak terputus ekstrim.
 - **Embeddings:** `FastEmbedEmbeddings` (gratis, cepat).
 - **Vector Store:** **Chroma**, dipersistenkan ke folder/volume Docker.
 - **Retriever:** Similarity search (top-k default 5).
 - **Prompt Engineering:** System prompt mewajibkan rujukan dasar hukum, hindari halusinasi.
-- **Generator:** **Gemini** via `langchain-google-genai` (`gemini-1.5-flash`).
+- **Generator:** **Gemini** via `langchain-google-genai` (`gemini-2.5-flash`).
 - **UI:** **Streamlit** chat-style (Build Index, Clear Index, Query).
 - **Containerization:** Dockerfile + docker-compose dengan volume untuk `chroma_db`, `.env` untuk rahasia.
 
@@ -41,8 +40,6 @@
 - **UI**:
   - Sidebar mengatur API Key, model, `top_k`, tombol Build/Clear.
   - Chat mengelola `st.session_state.messages`.
-
-> Saya memahami setiap baris kode di atas; jika diperlukan, saya dapat menjelaskan fungsi atau penggantiannya (mis. FAISS alih-alih Chroma).
 
 ## 4. Evaluasi (Sesuai Kriteria)
 
