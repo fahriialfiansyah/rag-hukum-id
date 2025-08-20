@@ -15,7 +15,7 @@ How to run:
 - Local: `streamlit run app.py`
 - Docker: `docker compose up --build` (from src/)
 
-Author: (your-name)
+Author: Fahri Alfiansyah
 """
 from __future__ import annotations
 
