@@ -18,14 +18,24 @@ Aplikasi RAG untuk menanyakan isi **UUD 1945** dan beberapa **Undang-Undang** (s
 
 ## Menjalankan via **Docker Compose** (Disarankan)
 
-1. Masuk ke folder `src/`
-2. Buat file `.env` dari template:
+1. Clone Repositori & Masuk ke Direktori
    ```bash
-   cp .env.example .env
-   # isi GOOGLE_API_KEY di .env
-3. Jalankan:
+   git clone https://github.com/fahriialfiansyah/rag-hukum-id.git
+   cd rag-hukum-id/src
+2. Buat File .env secara Manual:
+   Buat file .env di folder src/ dengan isi seperti berikut:
+   ```bash
+   GOOGLE_API_KEY=masukkan_api_key_anda_di_sini
+
+   # Opsional (override default)
+   PERSIST_DIR=/app/chroma_db
+   COLLECTION_NAME=bpk_hukum_id
+   GOOGLE_GENAI_MODEL=gemini-2.5-flash
+   ```
+   Pastikan kamu sudah memiliki Google API Key dari [Google Generative AI](https://ai.google.dev/)
+3. Jalankan Aplikasi:
     ```bash
     docker compose up --build
 
-4. Buka browser: http://localhost:8501
-5. Ajukan pertanyaan di chat
+5. Buka browser: http://localhost:8501
+6. Ajukan pertanyaan di chat
