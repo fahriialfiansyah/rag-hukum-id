@@ -1,6 +1,8 @@
 # RAG Hukum Indonesia — UUD & UU (LangChain + Chroma + Gemini)
 
 Aplikasi RAG untuk menanyakan isi **UUD 1945** dan beberapa **Undang-Undang** (sumber: **BPK Peraturan**).
+<img width="7684" height="4322" alt="localhost_8501_(Full HD)" src="https://github.com/user-attachments/assets/4bc4456c-5808-41c4-a32b-133ed1141697" />
+
 
 ## Fitur
 - LangChain RAG (loader → splitter → FastEmbed → Chroma → retriever → prompt → Gemini)
